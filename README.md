@@ -8,6 +8,9 @@ You can attach the t function to your window object to make it
 globally available to your Javascript source.
 The init function
 
+- Make sure the Pimcore REST Api is enabled.
+- Use the package like:
+
 ```javascript
 import { t, init } from 'pimcore-js-translations';
 
