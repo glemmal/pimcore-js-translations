@@ -18,4 +18,8 @@ import { t, init } from 'pimcore-js-translations';
 init('de', 'en').then(() => {
   window.t = t;
 });
+
+// in your js files:
+const myTranslation = t('my-cracy-translation-key')
+
 ```
