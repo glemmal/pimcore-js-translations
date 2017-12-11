@@ -15,6 +15,7 @@ The init function
 import { t, init } from 'pimcore-js-translations';
 
 // define the locale you wanna fetch
+// The translations are available inside the Promise!
 init('de', 'en').then(() => {
   window.t = t;
 });
@@ -23,3 +24,7 @@ init('de', 'en').then(() => {
 const myTranslation = t('my-cracy-translation-key')
 
 ```
+
+This version is still in Alpha! It initially loads all your translations from your CMS!
+If you have a huge amount of translations please consider another solution.
+Feel free to contribute :)
