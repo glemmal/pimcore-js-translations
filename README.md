@@ -25,7 +25,7 @@ init('de', 'en').then(() => {
 });
 
 // in your js files:
-const myTranslation = t('my-cracy-translation-key')
+const myTranslation = t('my-crazy-translation-key')
 ```
 
 This version is still in Alpha! It initially loads all your translations from your CMS!
