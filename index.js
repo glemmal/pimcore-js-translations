@@ -4,24 +4,31 @@ const url = '/webservice/rest/translations?type=website'
 
 let locale = 'en'
 let fallbackLocale = null
+let apiKey = null
 
 let cachedTranslations = []
 
-const fetchFromApi = (key = null) => {
+const fetchFromApi = (query = {}) => {
   return request
     .get(url)
+    .query({apikey: apiKey})
     .then((res) => {
       return res.body.data
     })
 }
 
-const init = (_locale, _fallbackLocale) => {
+const init = (_apiKey, _locale, _fallbackLocale) => {
   if (!_locale) {
     throw new Error('pimcore js tranlsations: no locale defined')
   }
 
+  if (!_apiKey) {
+    throw new Error('pimcore js translations: no api key defined')
+  }
+
   locale = _locale
   fallbackLocale = _fallbackLocale
+  apiKey = _apiKey
 
   return new Promise((resolve, reject) => {
     if (cachedTranslations.length) {
