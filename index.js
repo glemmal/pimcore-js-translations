@@ -28,10 +28,12 @@ const init = (_locale, _fallbackLocale) => {
       return resolve(cachedTranslations)
     }
 
-    fetchFromApi().then((translations) => {
-      cachedTranslations = translations
-      return resolve(translations)
-    })
+    fetchFromApi()
+      .then((translations) => {
+        cachedTranslations = translations
+        return resolve(translations)
+      })
+      .catch(reject)
   })
 }
 
