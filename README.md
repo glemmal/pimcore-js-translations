@@ -20,12 +20,16 @@ import { t, init } from 'pimcore-js-translations';
 
 // define the locale you wanna fetch
 // The translations are available inside the Promise!
-init('de', 'en').then(() => {
-  window.t = t;
-});
 
-// in your js files:
-const myTranslation = t('my-crazy-translation-key')
+// You need a pimcore user with a configured api key.
+// Create a user in pimcore and assign the translation permissions to it.
+const apiKey = 'xxxxxxxxxxxx';
+const locale = 'de';
+const fallbackLocale = 'en';
+
+init(apiKey, locale, fallbackLocale).then(() => {
+  const myTranslation = t('my-crazy-translation-key')
+});
 ```
 
 This version is still in Alpha! It initially loads all your translations from your CMS!
