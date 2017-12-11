@@ -1,6 +1,6 @@
 {
   "name": "pimcore-js-translations",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small js helper to bring your shared translations to your js codebase",
   "main": "index.js",
   "scripts": {

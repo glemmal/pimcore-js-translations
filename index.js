@@ -8,7 +8,7 @@ let apiKey = null
 
 let cachedTranslations = []
 
-const fetchFromApi = (query = {}) => {
+const fetchFromApi = () => {
   return request
     .get(url)
     .query({apikey: apiKey})
