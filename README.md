@@ -11,6 +11,10 @@ The init function
 - Make sure the Pimcore REST Api is enabled.
 - Use the package like:
 
+```bash
+npm i pimcore-js-translations
+```
+
 ```javascript
 import { t, init } from 'pimcore-js-translations';
 
@@ -22,7 +26,6 @@ init('de', 'en').then(() => {
 
 // in your js files:
 const myTranslation = t('my-cracy-translation-key')
-
 ```
 
 This version is still in Alpha! It initially loads all your translations from your CMS!
