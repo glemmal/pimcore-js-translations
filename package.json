@@ -1,0 +1,11 @@
+{
+  "name": "pimcore-js-translations",
+  "version": "1.0.0",
+  "description": "A small js helper to bring your shared translations to your js codebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
