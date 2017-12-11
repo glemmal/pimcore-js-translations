@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const url = '/webservice/rest/translations?type=website'
+const url = '/webservice/rest/translations'
 
 let locale = 'en'
 let fallbackLocale = null
@@ -11,7 +11,10 @@ let cachedTranslations = []
 const fetchFromApi = () => {
   return request
     .get(url)
-    .query({apikey: apiKey})
+    .query({
+      apikey: apiKey,
+      type: 'website'
+    })
     .then((res) => {
       return res.body.data
     })
