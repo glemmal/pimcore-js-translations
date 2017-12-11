@@ -37,7 +37,7 @@ const init = (_locale, _fallbackLocale) => {
   })
 }
 
-const t = (key) => {
+const t = (key, _locale = null) => {
   const translationElement = cachedTranslations.find((t) => t.key === key)
 
   if (!translationElement) {
@@ -45,7 +45,10 @@ const t = (key) => {
   }
 
   const { translations } = translationElement
-  const translation = translations[locale] || translations[fallbackLocale]
+
+  const translation = translations[_locale] ||
+    translations[locale] ||
+    translations[fallbackLocale]
 
   if (!translation) {
     return `${key} not translated for ${locale} and ${fallbackLocale}`
