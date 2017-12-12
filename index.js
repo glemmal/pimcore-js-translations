@@ -12,7 +12,7 @@ const fetchFromApi = () => {
   return request
     .get(url)
     .query({
-      'api-key': apiKey,
+      'apikey': apiKey,
       type: 'website'
     })
     .then((res) => {
