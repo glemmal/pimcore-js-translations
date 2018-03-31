@@ -16,17 +16,17 @@ const fetchFromApi = () => {
 }
 
 const init = (_apiKey, _locale, _fallbackLocale) => {
-  if (!_locale) {
-    throw new Error('pimcore js tranlsations: no locale defined')
-  }
-
-  if (!_apiKey) {
-    throw new Error('pimcore js translations: no api key defined')
-  }
-
   locale = _locale
   fallbackLocale = _fallbackLocale
   apiKey = _apiKey
+
+  if (!locale) {
+    throw new Error('pimcore js tranlsations: no locale defined')
+  }
+
+  if (!apiKey) {
+    throw new Error('pimcore js translations: no api key defined')
+  }
 
   return new Promise((resolve, reject) => {
     if (cachedTranslations.length) {
@@ -50,7 +50,6 @@ const t = (key, _locale = null) => {
   }
 
   const { translations } = translationElement
-
   const translation = (
     translations[_locale] ||
     translations[locale] ||
