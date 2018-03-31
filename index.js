@@ -11,13 +11,8 @@ let cachedTranslations = []
 const fetchFromApi = () => {
   return request
     .get(url)
-    .query({
-      'apikey': apiKey,
-      type: 'website'
-    })
-    .then((res) => {
-      return res.body.data
-    })
+    .query({ 'apikey': apiKey, type: 'website' })
+    .then((res) => res.body.data)
 }
 
 const init = (_apiKey, _locale, _fallbackLocale) => {
@@ -56,15 +51,15 @@ const t = (key, _locale = null) => {
 
   const { translations } = translationElement
 
-  const translation = translations[_locale] ||
+  const translation = (
+    translations[_locale] ||
     translations[locale] ||
     translations[fallbackLocale]
+  )
 
-  if (!translation) {
-    return `${key} not translated for ${locale} and ${fallbackLocale}`
-  }
-
-  return translation
+  return (
+    translation || `${key} not translated for ${locale} and ${fallbackLocale}`
+  )
 }
 
 export {
